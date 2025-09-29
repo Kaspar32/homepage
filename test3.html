@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Bildausschnitt</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+
+  
+    </style>
+  </head>
+  <body>
+
+      <img
+        id="pattern"
+        src="C:\Users\kaspar.bachmann\Framework\Homepage\V2630_00.jpg"
+        alt="Pattern"
+        style="display: none"
+      />
+
+
+    <canvas id="c" width="500" height="400"></canvas>
+
+    <script>
+      const canvas = document.getElementById("c");
+      const ctx = canvas.getContext("2d");
+      const image = document.getElementById("pattern");
+
+      image.onload = () => {
+  const centerX = 200; // Kreiszentrum x
+  const centerY = 200; // Kreiszentrum y
+  const radius = 200;  // Kreisradius
+
+  // Kreis definieren
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+  ctx.closePath();
+
+  // Alles außerhalb des Kreises ausblenden
+  ctx.clip();
+
+  // Bild zeichnen
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+};
+
+if (image.complete) {
+  image.onload();
+}
+    </script>
+  </body>
+</html>

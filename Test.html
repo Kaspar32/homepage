@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="first"></div>
+
+    <div class="third"></div>
+    <div class="skye"></div>
+
+    <div class="second"></div>
+  </body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    ".first",
+    {x:"-100%", opacity: 0
+    },
+    {
+      x: "-5%", opacity:1, duration:3,
+      scrollTrigger: {
+        trigger: ".first", 
+        toggleActions: "restart pause reverse none",
+        start: "10px",
+        end: "bottom",
+
+      }
+    }
+  )
+
+   gsap.fromTo(
+    ".third",
+    {x:"100%", opacity: 0
+    },
+    {
+      x: "-5%", opacity:1, duration:3,
+      scrollTrigger: {
+        trigger: ".first", 
+        toggleActions: "restart pause reverse none",
+        start: "10px",
+        end: "bottom",
+        markers: true,
+      }
+    }
+  )
+
+  gsap.fromTo(
+    ".skye",
+    { x: "-100%", opacity: 0 },
+    {
+      x: "-5%",
+      opacity: 1,
+      duration: 4,
+      scrollTrigger: {
+        trigger: ".skye",
+        toggleActions: "restart pause reverse none",
+
+        end: "bottom top",
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".second",
+    { x: "50%", opacity: 0 },
+    {
+      x: "-5%",
+      opacity: 1,
+      duration: 4,
+      scrollTrigger: {
+        trigger: ".second",
+        toggleActions: "restart pause reverse pause",
+        end: "bottom top",
+      },
+    }
+  );
+</script>
+
+<style>
+  .skye {
+    position: absolute;
+    width: 2000px;
+    height: 200px;
+    background-color: black;
+    top: 1000px;
+  }
+
+  .second {
+    position: absolute;
+    width: 2000px;
+    height: 200px;
+    background-color: black;
+    top: 1200px;
+  }
+
+  .first {
+    position: absolute;
+    width: 2000px;
+    height: 500px;
+    background-color: black;
+    top: 0px;
+
+  }
+
+  .third {
+    position: absolute;
+    width: 2000px;
+    height: 500px;
+    background-color: black;
+    top: 500px;
+
+  }
+</style>
