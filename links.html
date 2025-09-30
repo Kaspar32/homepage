@@ -1,41 +1,133 @@
-
 <div id="sky">
+  <!-- Header / Zurück -->
+  <div id="descr">
+    <a href="../Homepage/index.html" id="back-btn">
+      <img id="Back" src="arrow-left.svg" />
+    </a>
+    <span>Links</span>
+  </div>
+
+  <!-- Link-Logos -->
+  <div id="links">
+    <a href="https://soundcloud.com/wahwahmusik" target="_blank" rel="noopener noreferrer">
+      <img src="soundcloud.svg" />
+    </a>
+
+    <a href="https://www.geeksforgeeks.org/user/wahwahmusik/">
+      <img src="geeksforgeeks.svg" />
+    </a>
+
+    <a id="github" href="https://github.com/Kaspar32">
+      <img src="github.svg" />
+    </a>
+
 
     
-<a href="https://soundcloud.com/wahwahmusik" target="_blank" rel="noopener noreferrer">
-  <img src="soundcloud.svg" height="100px" width="300px"> 
-</a>
+    <a id="codepen" href="https://codepen.io/Kaspar1993">
+      <img src="codepen.svg" />
+    </a>
+  </div>
 
-<a href ="https://www.geeksforgeeks.org/user/wahwahmusik/">
-<img src="geeksforgeeks.svg" height="100px" width="300px"> 
-
-</a>
-
-
+  <!-- Email -->
+  <div id="email">
+    <h2>Email</h2>
+    <p>kaspar_bachmann@hotmail.de</p>
+    <p>KasparBachmann@proton.me</p>
+  </div>
 </div>
+
 <style>
-  a {
-    color: #ff5500; /* SoundCloud-Orange */
-    text-decoration: none;
+  /* Grundlayout */
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+    color: #333;
+  }
+
+  #sky {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
+
+  /* Header */
+  #descr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    color: #444;
+    font-size: 2rem;
     font-weight: bold;
-    transition: 0.2s;
 
-    position: relative;
-    left: 200px;
-    top:500px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    padding: 15px 30px;
+    margin-bottom: 60px;
   }
 
-  a:hover {
-    text-decoration: none;
+  #back-btn img {
+    width: 40px;
+    transition: transform 0.2s ease;
   }
 
-  a:focus {
-    outline: none;
+  #back-btn img:hover {
+    transform: translateX(-5px);
   }
 
-  #sky{
+  /* Link-Logos */
+  #links {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 80px;
+  }
 
-    background-color: white;
-    height: 1000px;
+  #links img {
+    height: 80px;
+    width: auto;
+    filter: grayscale(100%) contrast(120%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+
+  #links img:hover {
+    filter: grayscale(0%) contrast(100%);
+    transform: scale(1.1);
+  }
+
+  /* Email-Bereich */
+  #email {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: 30px 50px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  #email h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #222;
+  }
+
+  #email p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #555;
   }
 </style>
