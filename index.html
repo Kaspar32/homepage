@@ -124,7 +124,7 @@
           canvas.height = innerHeight;
         }
 
-        const PARTICLE_COUNT = 1000;
+        const PARTICLE_COUNT = 500;
         const RADIUS = Math.min(innerWidth, innerHeight) * 0.35;
         const particles = [];
 
@@ -211,7 +211,7 @@
 
           // Butterfly
           let x=400*Math.pow(Math.sin(time*1/1000),2)+150;
-          let y=600+Math.random()*100;
+          let y=600;
           ctx.lineWidth = 3;
           ctx.strokeStyle = "white";
           ctx.shadowColor = " white";
