@@ -11,10 +11,15 @@
 #pat{
 
     animation: wave 4s infinite ease-in-out;
-
-
+    height: 1000px;
+    width: 100vw;
+    border-bottom: ghostwhite;
+    border-bottom-left-radius: 25px;
+border-bottom-right-radius: 25px;
 
 }
+
+
 
 @keyframes flow{
 
@@ -24,7 +29,7 @@
 
 @keyframes wave {
   0% { transform: translateX(0) translateY(0); filter: blur(0px); }
-  50% { transform: translateX(5px) translateY(-3px); filter: blur(1px) brightness(2) hue-rotate(90deg);}
+  50% { transform: translateX(5px) translateY(-3px); filter: blur(1px) brightness(2) hue-rotate(90deg) contrast(2);}
   100% { transform: translateX(0) translateY(0); filter: blur(0px); }
 }
 
