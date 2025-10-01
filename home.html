@@ -1,6 +1,6 @@
 <div class="">
 
-
+<img id="pat" src="pattern.jpg"></img>
 
 </div>
 
@@ -8,6 +8,25 @@
 
 <style>
 
+#pat{
+
+    animation: wave 4s infinite ease-in-out;
+
+
+
+}
+
+@keyframes flow{
+
+    
+
+}
+
+@keyframes wave {
+  0% { transform: translateX(0) translateY(0); filter: blur(0px); }
+  50% { transform: translateX(5px) translateY(-3px); filter: blur(1px) brightness(2) hue-rotate(90deg);}
+  100% { transform: translateX(0) translateY(0); filter: blur(0px); }
+}
 
 
 </style>

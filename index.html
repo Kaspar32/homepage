@@ -7,7 +7,7 @@
       body {
         margin: 0;
         padding: 0;
-        background: black;
+        background: #d8d8d8;
         overflow: hidden;
       }
       canvas {
@@ -18,15 +18,13 @@
         color: white;
         width: 100px;
       }
-      footer {
-        color: white;
-        width: 100px;
-      }
+    
 
       header {
-        background: black;
+        background: #d8d8d8;
         padding: 1rem;
-        margin-left: 40rem;
+        margin-left: 15rem;
+        width: max-content;
       }
 
       header nav {
@@ -62,8 +60,20 @@
         padding: 10px;
         color: white;
         text-align: center;
+      }
 
-        
+      footer {
+        position: absolute;
+        top:1300px;
+        width:100vw;
+        background-image: url("pattern.jpg");
+        background-size: cover; /* skaliert das Bild so, dass es den ganzen Footer bedeckt */
+        background-position: center; /* zentriert das Bild */
+        color: white; /* damit der Text auf dunklem Bild lesbar bleibt */
+        text-align: left; /* Text mittig */
+        padding: 20px; /* etwas Abstand zum Rand */
+        border-radius: 25px;
+
       }
     </style>
     <img
@@ -78,26 +88,31 @@
     <header>
       <nav>
         <button class="Glas">
-          <a href="../Homepage/home.html"
-            >Home</a
-          >
+          <a href="../Homepage/home.html">Home</a>
         </button>
 
         <button class="Glas">
-          <a href="../Homepage/videos.html"
-            >Vids</a
-          >
+          <a href="../Homepage/videos.html">Vids</a>
         </button>
 
         <button class="Glas">
-          <a href="../Homepage/links.html"
-            >Links</a
-          >
+          <a href="../Homepage/links.html">Links</a>
         </button>
       </nav>
     </header>
 
-    <canvas id="c"></canvas>
+    <canvas
+      id="c"
+      style="
+        width: 800px;
+        height: 1200px;
+        position: absolute;
+        top: 85px;
+        left: 100px;
+        border-radius: 25px;
+        border: 4px white;
+      "
+    ></canvas>
     <script>
       (() => {
         const canvas = document.getElementById("c");
@@ -231,7 +246,7 @@
             ctx.fillStyle = `rgba(255,255,255,${alpha})`;
             ctx.shadowColor = " white";
             ctx.shadowBlur = "20";
-            ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
+            ctx.arc(p.x, p.y, 10, 0, Math.PI * 2);
             ctx.fill();
           }
 
@@ -242,6 +257,6 @@
       })();
     </script>
 
-    <footer>copyright</footer>
+    <footer>copyright © 2025</footer>
   </body>
 </html>
