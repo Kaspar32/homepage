@@ -211,7 +211,7 @@
 
           // Butterfly
           let x=400*Math.pow(Math.sin(time*1/1000),2)+150;
-          let y=600;
+          let y=1100;
           ctx.lineWidth = 3;
           ctx.strokeStyle = "white";
           ctx.shadowColor = " white";
@@ -305,7 +305,7 @@
             ctx.fillStyle = `rgba(255,255,255,${alpha})`;
             ctx.shadowColor = " white";
             ctx.shadowBlur = "20";
-            ctx.arc(p.x, p.y, 10, 0, Math.PI * 2);
+            ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
             ctx.fill();
           }
 
