@@ -15,7 +15,7 @@
         height: 100vh;
       }
       header {
-        color: white;
+        color: gray;
         width: 100px;
       }
 
@@ -32,7 +32,7 @@
       }
 
       header nav a {
-        color: white;
+        color: gray;
         text-decoration: none;
         font-weight: bold;
       }
@@ -62,10 +62,10 @@
       }
 
       footer {
-        position: absolute;
-        top: 1300px;
+        position: fixed;
+        bottom: 0;
         width: 100vw;
-        background-image: url("pattern.jpg");
+        /*background-image: url("pattern.jpg");*/
         background-size: cover; /* skaliert das Bild so, dass es den ganzen Footer bedeckt */
         background-position: center; /* zentriert das Bild */
         color: white; /* damit der Text auf dunklem Bild lesbar bleibt */
@@ -105,7 +105,7 @@
         width: 800px;
         height: 1200px;
         position: absolute;
-        top: 85px;
+        top: 150px;
         left: 100px;
         border-radius: 25px;
         border: 4px white;
@@ -210,65 +210,115 @@
           ctx.fillRect(0, 0, canvas.width, canvas.height);
 
           // Butterfly
-          let x=400*Math.pow(Math.sin(time*1/1000),2)+150;
-          let y=50;
+          let x = 400 * Math.pow(Math.sin((time * 1) / 1000), 2) + 150;
+          let y = 50;
           ctx.lineWidth = 3;
           ctx.strokeStyle = "white";
           ctx.shadowColor = " white";
           ctx.shadowBlur = "39";
-          
+
           ctx.beginPath();
-          ctx.moveTo(120+x, 100+y);
-          ctx.bezierCurveTo(320+x, 20+y, 140 + 100*Math.sin(time*1/100)+x, 20+y, 130+x, 40+y);
+          ctx.moveTo(120 + x, 100 + y);
+          ctx.bezierCurveTo(
+            320 + x,
+            20 + y,
+            140 + 100 * Math.sin((time * 1) / 100) + x,
+            20 + y,
+            130 + x,
+            40 + y
+          );
           ctx.fill();
           ctx.beginPath();
-          ctx.moveTo(120+x, 100+y);
-          ctx.bezierCurveTo(-100+x, 20+y, 140+ 100*Math.sin(time*1/100)+x, 20+y, 130+x, 40+y);
+          ctx.moveTo(120 + x, 100 + y);
+          ctx.bezierCurveTo(
+            -100 + x,
+            20 + y,
+            140 + 100 * Math.sin((time * 1) / 100) + x,
+            20 + y,
+            130 + x,
+            40 + y
+          );
           ctx.fill();
           ctx.beginPath();
-          ctx.moveTo(120+x, 100+y);
-          ctx.bezierCurveTo(-20+x, 140+y, 120+x, 160+y, 120+x, 100+y);
+          ctx.moveTo(120 + x, 100 + y);
+          ctx.bezierCurveTo(
+            -20 + x,
+            140 + y,
+            120 + x,
+            160 + y,
+            120 + x,
+            100 + y
+          );
           ctx.fill();
           ctx.beginPath();
-          ctx.moveTo(120+x, 100+y);
-          ctx.bezierCurveTo(250+x, 140+y, 150+x, 160+y, 120+x, 100+y);
+          ctx.moveTo(120 + x, 100 + y);
+          ctx.bezierCurveTo(
+            250 + x,
+            140 + y,
+            150 + x,
+            160 + y,
+            120 + x,
+            100 + y
+          );
           ctx.fill();
           ctx.beginPath();
-          ctx.ellipse(125+x, 90+y, 5, 60, Math.PI / 20, 0, 2 * Math.PI);
+          ctx.ellipse(125 + x, 90 + y, 5, 60, Math.PI / 20, 0, 2 * Math.PI);
           ctx.fill();
           ctx.beginPath();
-          ctx.moveTo(135+x, 30+y);
-          ctx.lineTo(150+x, 5+y);
+          ctx.moveTo(135 + x, 30 + y);
+          ctx.lineTo(150 + x, 5 + y);
           ctx.stroke();
           ctx.beginPath();
-          ctx.moveTo(135+x, 30+y);
-          ctx.lineTo(125+x, 5+y);
+          ctx.moveTo(135 + x, 30 + y);
+          ctx.lineTo(125 + x, 5 + y);
           ctx.stroke();
           ctx.fillStyle = "black";
           ctx.beginPath();
-          ctx.moveTo(120+x, 100+y);
-          ctx.bezierCurveTo(300+x, 20+y, 140+ 100*Math.sin(time*1/100)+x, 20+y + 10*Math.sin(time*1/100), 130+x, 40+y);
+          ctx.moveTo(120 + x, 100 + y);
+          ctx.bezierCurveTo(
+            300 + x,
+            20 + y,
+            140 + 100 * Math.sin((time * 1) / 100) + x,
+            20 + y + 10 * Math.sin((time * 1) / 100),
+            130 + x,
+            40 + y
+          );
           ctx.fill();
 
           ctx.fill();
           ctx.beginPath();
-          ctx.moveTo(120+x, 100+y);
-          ctx.bezierCurveTo(-80+x, 20+y, 140+ 100*Math.sin(time*1/100)+x, 20+y, 130+x, 40+y);
+          ctx.moveTo(120 + x, 100 + y);
+          ctx.bezierCurveTo(
+            -80 + x,
+            20 + y,
+            140 + 100 * Math.sin((time * 1) / 100) + x,
+            20 + y,
+            130 + x,
+            40 + y
+          );
           ctx.fill();
-          ctx.moveTo(120+x, 100+y);
-          ctx.bezierCurveTo(-6+x, 140+y, 120+x, 160+y, 120+x, 100+y);
+          ctx.moveTo(120 + x, 100 + y);
+          ctx.bezierCurveTo(
+            -6 + x,
+            140 + y,
+            120 + x,
+            160 + y,
+            120 + x,
+            100 + y
+          );
           ctx.fill();
 
           ctx.beginPath();
-          ctx.moveTo(120+x, 100+y);
-          ctx.bezierCurveTo(230+x, 140+y, 150+x, 160+y, 120+x, 100+y);
+          ctx.moveTo(120 + x, 100 + y);
+          ctx.bezierCurveTo(
+            230 + x,
+            140 + y,
+            150 + x,
+            160 + y,
+            120 + x,
+            100 + y
+          );
           ctx.fill();
-
-
-
-
-
-    
 
           for (let p of particles) {
             if (!p.returning) {
