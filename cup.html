@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+
+  <style>
+   @keyframes spin {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(90deg) scale(1.2); }
+  100% { transform: rotate(180deg) scale(1); }
+}
+  </style>
+
+  <body>
+    <div id="Hamburger">
+      <div id="paddy_top" style="position: relative; top: 53px">
+        <svg height="400" width="450" xmlns="http://www.w3.org/2000/svg">
+          <path
+            id="lineAC"
+            d="M 100 350 q 150 -150 300 0 Z"
+            stroke="#DEB887"
+            stroke-width="4"
+            fill="#DEB887"
+          />
+        </svg>
+      </div>
+
+      <div
+        id="salate"
+        style="
+          height: 20px;
+          background-color: #9acd32;
+          width: 320px;
+          position: relative;
+          left: 90px;
+          border-radius: 25px;
+        "
+      ></div>
+
+      <div
+        id="cheese"
+        style="
+          height: 10px;
+          background-color: #fff000;
+          width: 320px;
+          position: relative;
+          left: 90px;
+          border-radius: 25px;
+        "
+      ></div>
+      <div
+        id="meat"
+        style="
+          height: 50px;
+          background-color: #a0522d;
+          width: 320px;
+          position: relative;
+          left: 90px;
+          border-radius: 25px;
+        "
+      ></div>
+
+      <div
+        id="paddy_bottom"
+        style="
+          height: 50px;
+          background-color: #deb887;
+          width: 320px;
+          border-radius: 25px;
+          position: relative;
+          left: 90px;
+        "
+      ></div>
+    </div>
+  </body>
+
+  <script>
+    const div = document.getElementById("Hamburger");
+    let count = true;
+
+    div.addEventListener("click", () => {
+      if ((count == true)) {
+        const div1 = document.getElementById("paddy_top");
+        div1.style.marginBottom = "50px";
+
+        const div2 = document.getElementById("salate");
+        div2.style.marginBottom = "50px";
+        div2.style.animation="spin 1s"
+
+        const div3 = document.getElementById("cheese");
+        div3.style.marginBottom = "50px";
+        div3.style.animation="spin 1s"
+
+        const div4 = document.getElementById("meat");
+        div4.style.marginBottom = "50px";
+         div4.style.animation="spin 1s"
+
+        const div5 = document.getElementById("paddy_bottom");
+        div5.style.marginBottom = "50px";
+
+        count=false;
+      }
+      else{
+
+        const div1 = document.getElementById("paddy_top");
+        div1.style.marginBottom = "0px";
+
+        const div2 = document.getElementById("salate");
+        div2.style.marginBottom = "0px";
+
+        const div3 = document.getElementById("cheese");
+        div3.style.marginBottom = "0px";
+
+        const div4 = document.getElementById("meat");
+        div4.style.marginBottom = "0px";
+
+        const div5 = document.getElementById("paddy_bottom");
+        div5.style.marginBottom = "0px";
+
+        count = true;
+
+      }
+    });
+  </script>
+</html>
