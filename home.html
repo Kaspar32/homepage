@@ -60,6 +60,15 @@
       padding: 20px;
     }
   }
+
+   #back-btn img {
+    width: 100px;
+    transition: transform 0.2s ease;
+  }
+
+  #back-btn img:hover {
+    transform: translateX(-5px);
+  }
 </style>
 </head>
 <body>
@@ -75,6 +84,10 @@
 <div id="sectiontwo" class="section">
   In my free time, I make music under the name wahwahMusik.
 </div>
+
+<a href="../homepage/index.html" id="back-btn">
+      <img id="Back" src="arrow-left.svg" />
+    </a>
 
 <script>
   // GSAP ScrollTrigger-Animationen
