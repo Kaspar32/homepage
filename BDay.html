@@ -12,7 +12,7 @@
 
 <div style="background-color: black;">
 
-     <div class="point"></div>
+     
 
 <div id="plate" style="position: relative; top: 400px; height: 150px; width: 400px; left: 300px; background-color: bisque; border-radius: 50%; box-shadow: white 0px 5px 15px;">
 
@@ -40,7 +40,7 @@
 </div>
 
 
-<div class="greetings" style="position: relative; top: -1000px; text-align: center; font-size: xx-large; color: white;  font-family: 'Pacifico', cursive;">
+<div class="greetings" style="position: relative; top: -1000px; text-align: center; font-size: xx-large; color: white; te  font-family: 'Pacifico', cursive;">
   <p>Happy Birthday Philipp!</p>
 
 
@@ -49,13 +49,47 @@
 </div>
 
   <script>
-    
+
+
+    const numPoints = 100; // Anzahl der Punkte
+    const body = document.body;
+
+    for (let i = 0; i < numPoints; i++) {
+      const point = document.createElement('div');
+      point.classList.add('point');
+      point.style.top = Math.random() * window.innerHeight + 'px';
+      point.style.left = Math.random() * window.innerWidth + 'px';
+      point.style.animationDelay = (Math.random() * 2) + 's'; // zufälliges Blinken
+      body.appendChild(point);
+    }
   </script>
+    
+
 
 
 <style>
 
+     .point {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px white;
+      animation: blink 2s infinite ease-in-out;
+    }
 
+    @keyframes blink {
+      0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+    }
 
 
 .greeting {
