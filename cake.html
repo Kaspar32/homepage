@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Kuchen mit DIVs</title>
+  <style>
+    body {
+      background: #fffbe7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      perspective: 800px;
+    }
+    .cake-container {
+      transform-style: preserve-3d;
+      width: 220px;
+      height: 220px;
+      position: relative;
+    }
+    .cake-layer {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 200px;
+      height: 60px;
+      border-radius: 100px / 30px;
+      box-shadow: 0 10px 50px rgba(80,40,10,0.3);
+    }
+    .cake-layer.bottom {
+      background: linear-gradient(to bottom, #d78c41 70%, #b07038 100%);
+      z-index: 1;
+      transform: translateY(120px) scaleY(1.05) rotateX(18deg);
+    }
+    .cake-layer.middle {
+      background: linear-gradient(to bottom, #ffe7b0 80%, #ffe4a3 100%);
+      z-index: 2;
+      transform: translateY(60px) scaleY(1.1) rotateX(12deg);
+      box-shadow: 0 10px 30px rgba(150,110,40,0.14);
+    }
+    .cake-layer.top {
+      background: linear-gradient(to bottom, #ffecbe 95%, #fffade 100%);
+      z-index: 3;
+      transform: scaleY(1.2) rotateX(8deg);
+      box-shadow: 0 10px 20px rgba(150,110,40,0.11);
+    }
+    .cherry {
+      position: absolute;
+      left: 100px;
+      top: 15px;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle at 60% 40%, #ff466e 60%, #d2063d 100%);
+      border-radius: 50%;
+      z-index: 4;
+      box-shadow: 0 3px 7px rgba(120,20,40,0.22);
+    }
+    .cherry.stem {
+      width: 4px;
+      height: 30px;
+      background: #519c41;
+      left: 109px;
+      top: -10px;
+      border-radius: 2px;
+      z-index: 5;
+      box-shadow: 0 1px 2px #3d6c2d;
+      transform: rotate(-16deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="cake-container">
+    <div class="cake-layer bottom"></div>
+    <div class="cake-layer middle"></div>
+    <div class="cake-layer top"></div>
+    <div class="cherry"></div>
+    <div class="cherry stem"></div>
+  </div>
+</body>
+</html>
