@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <canvas id="canvas" width="500" height="1000" style="background-color: black;"></canvas>
+    <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+
+    // Draw the mask
+    ctx.fillStyle = "white";
+
+    ctx.beginPath();
+    ctx.moveTo(50, 200);
+    ctx.bezierCurveTo(150, 20, 350, 20, 450, 200);
+    ctx.fill();
+
+   ctx.beginPath();
+    
+ctx.moveTo(50, 200);
+    ctx.bezierCurveTo(10, 400, 50, 700,200, 920);
+
+    ctx.moveTo(450, 200);
+    ctx.bezierCurveTo(490, 400, 450, 700,300, 920);
+
+    ctx.moveTo(200, 900);
+    ctx.bezierCurveTo(150, 950, 350, 950, 300, 900);
+    ctx.fill();
+
+
+     ctx.beginPath();
+  ctx.moveTo(50, 200);
+  ctx.lineTo(450, 200);
+  ctx.lineTo(300, 920);
+  ctx.lineTo(200, 920);
+  ctx.closePath();
+  ctx.fill();
+
+    </script>
+</body>
+</html>
