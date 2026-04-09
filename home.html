@@ -14,14 +14,14 @@
     padding: 0;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-  }
+   body {
+     font-family: Arial, sans-serif;
+     background-color: black;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     overflow-x: hidden;
+   }
 
   /* Hintergrundbild */
   #pat {
@@ -40,18 +40,18 @@
     100% { transform: translateX(0) translateY(0); filter: blur(0px); }
   }
 
-  /* Sektionen */
-  .section {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 25px;
-    padding: 100px;
-    margin: 20px 0;
-    max-width: 2000px;
-    width: 90%;
-    color: #696969;
-    font-size: xx-large;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
+   /* Sektionen */
+   .section {
+     background-color: rgba(0, 0, 0, 0.7);
+     border-radius: 25px;
+     padding: 100px;
+     margin: 20px 0;
+     max-width: 2000px;
+     width: 90%;
+     color: white;
+     font-size: xx-large;
+     box-shadow: 0 8px 20px rgba(255,255,255,0.1);
+   }
 
   /* Responsive Text */
   @media (max-width: 600px) {
@@ -62,13 +62,14 @@
   }
 
    #back-btn img {
-    width: 100px;
-    transition: transform 0.2s ease;
-  }
+     width: 100px;
+     transition: transform 0.2s ease;
+     filter: invert(100%);
+   }
 
-  #back-btn img:hover {
-    transform: translateX(-5px);
-  }
+   #back-btn img:hover {
+     transform: translateX(-5px);
+   }
 </style>
 </head>
 <body>
@@ -85,7 +86,7 @@
   In my free time, I make music under the name wahwahMusik.
 </div>
 
-<a href="../homepage/index.html" id="back-btn">
+ <a href="../Homepage/index.html" id="back-btn">
       <img id="Back" src="arrow-left.svg" />
     </a>
 
