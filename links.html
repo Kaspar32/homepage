@@ -1,147 +1,305 @@
-<div id="sky">
-  <!-- Header / Zurück -->
-  <div id="descr">
-    <a href="../homepage/index.html" id="back-btn">
-      <img id="Back" src="arrow-left.svg" />
-    </a>
-    <span>Links</span>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-  <!-- Link-Logos -->
-  <div id="links">
-    <a href="https://soundcloud.com/wahwahmusik" target="_blank" rel="noopener noreferrer">
-      <img src="soundcloud.svg" />
-    </a>
+    :root {
+      --ink: #f4f1ea;
+      --muted: #a7aaa5;
+      --line: rgba(244, 241, 234, 0.18);
+      --accent: #d3ff5c;
+      --panel: rgba(25, 28, 27, 0.82);
+    }
 
-    <a href="https://www.geeksforgeeks.org/user/wahwahmusik/">
-      <img src="geeksforgeeks.svg" />
-    </a>
+    * {
+      box-sizing: border-box;
+    }
 
-    <a id="github" href="https://github.com/Kaspar32">
-      <img src="github.svg" />
-    </a>
+    html {
+      min-height: 100%;
+      background: #101211;
+    }
 
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      background: radial-gradient(circle at 85% 15%, rgba(211, 255, 92, 0.12), transparent 28%), linear-gradient(135deg, #171b19 0%, #0c0e0d 55%, #171a18 100%);
+    }
 
-    
-    <a id="codepen" href="https://codepen.io/Kaspar1993">
-      <img src="codepen.svg" />
-    </a>
-  </div>
+    .page-shell {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 24px 0 64px;
+    }
 
-  <!-- Email -->
-  <div id="email">
-    <h2>Email</h2>
-    <p>kaspar_bachmann@hotmail.de</p>
-    <p>KasparBachmann@proton.me</p>
-  </div>
-</div>
-<footer>copyright © 2025</footer>
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
 
-<style>
-  /* Grundlayout */
-  body {
-    margin: 0;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
-    color: #333;
-  }
+    .eyebrow,
+    .card-label {
+      color: var(--accent);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-  #sky {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-  }
+    .eyebrow::before {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      content: '';
+      box-shadow: 0 0 14px var(--accent);
+    }
 
-  /* Header */
-  #descr {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    #back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
 
-    color: #444;
-    font-size: 2rem;
-    font-weight: bold;
+    #back-btn:hover {
+      color: var(--accent);
+      transform: translateX(-4px);
+    }
 
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    #back-btn img {
+      width: 22px;
+      filter: invert(1);
+    }
 
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    .intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 92px 0 64px;
+    }
 
-    padding: 15px 30px;
-    margin-bottom: 60px;
-  }
+    h1 {
+      margin: 16px 0 0;
+      font-size: clamp(4rem, 10vw, 8.5rem);
+      font-weight: 600;
+      letter-spacing: -0.07em;
+      line-height: 0.84;
+    }
 
-  #back-btn img {
-    width: 40px;
-    transition: transform 0.2s ease;
-  }
+    h1 span {
+      color: var(--accent);
+    }
 
-  #back-btn img:hover {
-    transform: translateX(-5px);
-  }
+    .intro-copy {
+      max-width: 290px;
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
 
-  /* Link-Logos */
-  #links {
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 80px;
-  }
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
 
-  #links img {
-    height: 80px;
-    width: auto;
-    filter: grayscale(100%) contrast(120%);
-    transition: filter 0.3s ease, transform 0.3s ease;
-  }
+    .link-card {
+      display: flex;
+      min-height: 190px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      text-decoration: none;
+      transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+    }
 
-  #links img:hover {
-    filter: grayscale(0%) contrast(100%);
-    transform: scale(1.1);
-  }
+    .link-card:hover,
+    .link-card:focus-visible {
+      border-color: var(--accent);
+      background: rgba(211, 255, 92, 0.1);
+      transform: translateY(-6px);
+      outline: none;
+    }
 
-  /* Email-Bereich */
-  #email {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    .link-card img {
+      width: auto;
+      height: 42px;
+      max-width: 100%;
+      align-self: flex-start;
+      filter: invert(1) grayscale(1) opacity(0.85);
+      transition: filter 0.25s ease;
+    }
 
-    padding: 30px 50px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  }
+    .link-card:hover img,
+    .link-card:focus-visible img {
+      filter: invert(1) sepia(1) saturate(4) hue-rotate(25deg);
+    }
 
-  #email h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: #222;
-  }
+    .link-name {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
 
-  #email p {
-    margin: 8px 0;
-    font-size: 1rem;
-    color: #555;
-  }
-  footer {
-         position: fixed;
-        bottom: 0;
-        width:100vw;
-        /*background-image: url("pattern.jpg");*/
-        background-size: cover; /* skaliert das Bild so, dass es den ganzen Footer bedeckt */
-        background-position: center; /* zentriert das Bild */
-        color: white; /* damit der Text auf dunklem Bild lesbar bleibt */
-        text-align: left; /* Text mittig */
-        padding: 20px; /* etwas Abstand zum Rand */
-        border-radius: 25px;
+    .link-arrow {
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
 
+    .contact {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .contact-heading,
+    .email-list {
+      padding: 28px;
+      border: 1px solid var(--line);
+    }
+
+    .contact-heading {
+      background: var(--accent);
+      color: #141712;
+    }
+
+    .contact-heading .card-label {
+      color: #141712;
+    }
+
+    .contact-heading h2 {
+      margin: 40px 0 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      line-height: 0.95;
+    }
+
+    .email-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      background: var(--panel);
+    }
+
+    .email-list a {
+      width: fit-content;
+      color: var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.82rem, 1.5vw, 1rem);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .email-list a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 760px) {
+      .page-shell {
+        width: min(100% - 32px, 540px);
+        padding-top: 16px;
       }
-</style>
+
+      .intro {
+        display: block;
+        padding: 70px 0 44px;
+      }
+
+      .intro-copy {
+        margin-top: 32px;
+      }
+
+      .link-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .link-card {
+        min-height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="topbar">
+      <span class="eyebrow">Portfolio / Links</span>
+      <a href="index.html" id="back-btn">
+        <img src="arrow-left.svg" alt="">
+        <span>Back home</span>
+      </a>
+    </div>
+
+    <section class="intro">
+      <div>
+        <span class="eyebrow">Find me elsewhere</span>
+        <h1>Stay<br><span>connected.</span></h1>
+      </div>
+      <p class="intro-copy">A few places where I share music, code, experiments and things worth clicking.</p>
+    </section>
+
+    <section class="link-grid" aria-label="External profiles">
+      <a class="link-card" href="https://soundcloud.com/wahwahmusik" target="_blank" rel="noopener noreferrer">
+        <img src="soundcloud.svg" alt="SoundCloud">
+        <span class="link-name">SoundCloud <span class="link-arrow">↗</span></span>
+      </a>
+      <a class="link-card" href="https://www.geeksforgeeks.org/user/wahwahmusik/" target="_blank" rel="noopener noreferrer">
+        <img src="geeksforgeeks.svg" alt="GeeksforGeeks">
+        <span class="link-name">GeeksforGeeks <span class="link-arrow">↗</span></span>
+      </a>
+      <a class="link-card" href="https://github.com/Kaspar32" target="_blank" rel="noopener noreferrer">
+        <img src="github.svg" alt="GitHub">
+        <span class="link-name">GitHub <span class="link-arrow">↗</span></span>
+      </a>
+      <a class="link-card" href="https://codepen.io/Kaspar1993" target="_blank" rel="noopener noreferrer">
+        <img src="codepen.svg" alt="CodePen">
+        <span class="link-name">CodePen <span class="link-arrow">↗</span></span>
+      </a>
+    </section>
+
+    <section class="contact">
+      <div class="contact-heading">
+        <span class="card-label">Direct line</span>
+        <h2>Say<br>hello.</h2>
+      </div>
+      <div class="email-list" aria-label="Email addresses">
+        <span class="card-label">Email</span>
+        <a href="mailto:kaspar_bachmann@hotmail.de">kaspar_bachmann@hotmail.de</a>
+        <a href="mailto:KasparBachmann@proton.me">KasparBachmann@proton.me</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
